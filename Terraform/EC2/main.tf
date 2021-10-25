@@ -64,3 +64,4 @@ resource "aws_instance" "worker" {
     Name = "worker"
   }
 }
+
