@@ -10,3 +10,5 @@ variable "instance_private_ip" {}
 # variable "private_security_group" {}
 # variable "db_instance_class" {}
 # variable "initial_db_name" {}
+variable "net_id_jenk" {}
+variable "net_id_worker" {}
