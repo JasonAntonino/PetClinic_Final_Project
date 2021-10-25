@@ -3,6 +3,7 @@ resource "aws_instance" "foo" {
   instance_type     = var.instance_type
   key_name          = var.key_name
   availability_zone = var.availability_zone
+  user_data = "${file("DockerInstall.sh")}"
 
   network_interface {
     network_interface_id = aws_network_interface.prod.id
@@ -35,6 +36,7 @@ resource "aws_instance" "jenkins" {
   instance_type     = var.instance_type 
   availability_zone = var.av_zone 
   key_name          = var.key_name
+  user_data = "${file("JenkinsInstall.sh")}"
 
   network_interface {
     device_index         = 0
@@ -51,6 +53,7 @@ resource "aws_instance" "worker" {
   instance_type     = var.instance_type 
   availability_zone = var.av_zone 
   key_name          = var.key_name
+  user_data = "${file("DockerInstall.sh")}"
 
   network_interface {
     device_index         = 0
