@@ -27,3 +27,18 @@ module "EC2" {
 #   db_instance_class      = "db.t3.micro"
 #   initial_db_name        = "gameWorkshop"
 }
+
+module "Subnets" {
+  source = "./Subnets"
+
+  vpc_id             = module.VPC.vpc_id
+  public_subnet_1_cidr = "10.0.1.0/24"
+  availability_zone_1  = "eu-west-1a"
+  private_subnet_1_cidr = "10.0.2.0/24"
+  availability_zone_2  = "eu-west-1b"
+  private_subnet_2_cidr = "10.0.3.0/24"
+  availability_zone_3  = "eu-west-1c"
+  public_route_table_id = module.VPC.route_table_id
+  private_route_table_id = module.VPC.pri_route_table_id
+  internet_gateway = module.VPC.internet_gate
+}
