@@ -29,3 +29,35 @@ resource "aws_network_interface" "prod" {
 #   db_subnet_group_name   = var.subnet_group_name
 #   vpc_security_group_ids = [var.private_security_group]
 # }
+
+resource "aws_instance" "jenkins" {
+  ami               = var.ami_id 
+  instance_type     = var.instance_type 
+  availability_zone = var.av_zone 
+  key_name          = var.key_name
+
+  network_interface {
+    device_index         = 0
+    network_interface_id = var.net_id_jenk
+  }
+
+  tags = {
+    Name = "jenkins"
+  }
+}
+
+resource "aws_instance" "worker" {
+  ami               = var.ami_id 
+  instance_type     = var.instance_type 
+  availability_zone = var.av_zone 
+  key_name          = var.key_name
+
+  network_interface {
+    device_index         = 0
+    network_interface_id = var.net_id_worker
+  }
+
+  tags = {
+    Name = "worker"
+  }
+}
