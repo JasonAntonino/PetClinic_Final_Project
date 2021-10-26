@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  
+  backend:
+    image: springcommunity/spring-petclinic-rest:latest
+    build: ./spring-petclinic-rest
+    ports:
+      - 9966:9966
+    container_name: backend
+    
+
+   
+  nginx:
+    image: hdogar/nginx:latest 
+    build: ./nginx
+    container_name: nginx 
+    ports:
+      - 80:80 
+
+  frontend:
+    image: hdogar/frontend:latest
+    build: ./spring-petclinic-angular
+    depends_on:
+      - backend
+    container_name: frontend
+  
