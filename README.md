@@ -90,7 +90,7 @@ We decided on using the following tools and technologies to complete the deploym
 ## Areas of improvement
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
-    However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
+    However, because it requires separate installations of various CLI tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
 *
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
