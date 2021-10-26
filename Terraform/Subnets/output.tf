@@ -24,12 +24,12 @@ output "jenkins_sg_id" {
 }
 
 # Outputs the Security Group ID
-output "docker_swarm_sg" {
+output "docker_swarm_sg_id" {
   value = aws_security_group.docker_swarm_sg.id
 }
 
 # Outputs the Security Group ID
-output "allow_mysql" {
+output "allow_mysql_id" {
   value = aws_security_group.allow_mysql.id
 }
 
@@ -63,6 +63,7 @@ output "private_subnet_2_cidr" {
   value = var.private_subnet_2_cidr
 }
 
-output "nat_gateway" {
-    value = aws_nat_gateway.nat_gateway
-}
+# # Commented temporarily
+# output "nat_gateway" {
+#     value = aws_nat_gateway.nat_gateway
+# }
