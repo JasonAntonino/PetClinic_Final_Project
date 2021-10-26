@@ -8,19 +8,31 @@ module "VPC" {
   source = "./VPC"
 
   vpc_cidr = "10.0.0.0/16"
-  nat_gate = module.Subnets.nat_gate
+  ## Temporarily Commented Nat Gateway
+  # nat_gate = module.Subnets.nat_gateway
 }
 
 module "EC2" {
   source = "./EC2"
 
-  instance_type          = "t2.micro"
-  ami                    = "ami-0194c3e07668a7e36"
-  key_name               = ""
+  swarm_ami = "ami-0943382e114f188e8"
+  swarm_instance_type = "t2.medium"
   availability_zone      = "eu-west-1a"
-  subnet_id              = module.Subnets.subnet_id
-  security_group         = module.Subnets.security_group
-  instance_private_ip    = format("%s%s", substr(module.Subnets.subnet_cidr, 0, 7), "50") 
+  public_subnet_id = module.Subnets.public_subnet_1_id
+  swarm_security_group = module.Subnets.docker_swarm_sg_id
+
+  swarm_key_name_1 = "ManagerNode"
+  foo_private_ip = "10.0.1.50"
+
+  swarm_key_name_2 = "workerNode"
+  worker_private_ip = "10.0.1.60"
+
+  jenkins_ami = "ami-0943382e114f188e8"
+  jenkins_instance_type = "t2.medium"
+  jenkins_key_name = "JenkinNode"
+  jenkins_private_ip = "10.0.1.70"
+  jenkins_security_group = module.Subnets.jenkins_sg_id
+
 #   db_password            = var.db_password
 #   private_security_group = module.Subnets.private_security_group
 #   subnet_group_name      = module.Subnets.subnet_group_name

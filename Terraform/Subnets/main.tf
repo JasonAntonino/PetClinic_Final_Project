@@ -41,24 +41,24 @@ resource "aws_db_subnet_group" "subnet_group" {
 }
 
 # NAT Gateway
-resource "aws_nat_gateway" "nat_gateway" {
-  depends_on = [
-    aws_eip.nat_gateway_eip
-  ]
+# resource "aws_nat_gateway" "nat_gateway" {
+#   depends_on = [
+#     aws_eip.nat_gateway_eip
+#   ]
 
-  allocation_id = aws_eip.nat_gateway_eip.ip
-  subnet_id = aws_subnet.public_subnet_1.id
+#   allocation_id = aws_eip.nat_gateway_eip.id
+#   subnet_id = aws_subnet.public_subnet_1.id
 
-  tags = {
-    Name = "Nat-Gateway_DB"
-  }
-}
+#   tags = {
+#     Name = "Nat-Gateway_DB"
+#   }
+# }
 
-#Nat Gateway EIP
-resource "aws_eip" "nat_gateway_eip" {
-  vpc                       = true
-  depends_on                = [var.internet_gateway]
-}
+# #Nat Gateway EIP
+# resource "aws_eip" "nat_gateway_eip" {
+#   vpc                       = true
+#   depends_on                = [var.internet_gateway]
+# }
 
 
 
@@ -102,7 +102,7 @@ resource "aws_security_group" "jenkins_sg" {
   }
 }
 
-# Security Group - Allows SSH traffic
+# Security Group - Docker Swarm Instance
 resource "aws_security_group" "docker_swarm_sg" {
   name        = "docker_swarm_sg"
   description = "Security Group for the Docker Swarm Nodes"
@@ -113,6 +113,24 @@ resource "aws_security_group" "docker_swarm_sg" {
     description      = "SSH access"
     from_port        = 22
     to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "Application"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "Application"
+    from_port        = 9966
+    to_port          = 9966
     protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
