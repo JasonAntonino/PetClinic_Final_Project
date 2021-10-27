@@ -97,9 +97,28 @@ It appears the AWS Calculator does not take free tier accounts into consideratio
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
     However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
-*
+* Use Jira to better organise tasks.
+* Better knowledge and understanding of the tools (links back to the first point)
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
+
+## Sprint retrospective
+# What went well
+ * Organised tasks effectively
+ * Good and frequent communication
+ * Motivating team which helped all of us keep focused
+ * Good pair programming work despite working remotely
+ * Good collaboration
+ * Bounced back fast from setbacks
+
+# What could be improved:
+* Time Management
+* Being more meticulous
+* Use kubernetes earlier in the deployment - (have better understanding of tools)
+* What would we do next time:
+* Have more scheduled check in every 2  hours as a group.
+* Having better understanding of team members specific strengths and weaknesses
+
 
 ## Conclusion
 
