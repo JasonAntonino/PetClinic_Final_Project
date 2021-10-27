@@ -23,10 +23,10 @@ output "jenkins_sg_id" {
   value = aws_security_group.jenkins_sg.id
 }
 
-# Outputs the Security Group ID
-output "docker_swarm_sg_id" {
-  value = aws_security_group.docker_swarm_sg.id
-}
+# # Outputs the Security Group ID
+# output "docker_swarm_sg_id" {
+#   value = aws_security_group.docker_swarm_sg.id
+# }
 
 # Outputs the Security Group ID
 output "allow_mysql_id" {
@@ -39,13 +39,23 @@ output "jenkins_sg" {
 }
 
 # Outputs the Security Group object
-output "docker_swarm_sg" {
-  value = aws_security_group.docker_swarm_sg
-}
+# output "docker_swarm_sg" {
+#   value = aws_security_group.docker_swarm_sg
+# }
 
 # Outputs the Security Group object
 output "allow_mysql" {
   value = aws_security_group.allow_mysql
+}
+
+#Output for Kuberntes SG Worker 2 
+output "worker_group_mgmt_two"{
+  value = aws_security_group.worker_group_mgmt_two
+}
+
+#Output for Kuberntes SG Worker 1 
+output "worker_group_mgmt_one"{
+  value = aws_security_group.worker_group_mgmt_one
 }
 
 # Outputs the CIDR block of public subnet 1

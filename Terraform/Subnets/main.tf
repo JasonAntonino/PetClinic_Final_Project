@@ -102,89 +102,89 @@ resource "aws_security_group" "jenkins_sg" {
   }
 }
 
-# Security Group - Docker Swarm Instance
-resource "aws_security_group" "docker_swarm_sg" {
-  name        = "docker_swarm_sg"
-  description = "Security Group for the Docker Swarm Nodes"
-  vpc_id      = var.vpc_id
+# # Security Group - Docker Swarm Instance
+# resource "aws_security_group" "docker_swarm_sg" {
+#   name        = "docker_swarm_sg"
+#   description = "Security Group for the Docker Swarm Nodes"
+#   vpc_id      = var.vpc_id
 
-  # SSH Access
-  ingress {
-    description      = "SSH access"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   # SSH Access
+#   ingress {
+#     description      = "SSH access"
+#     from_port        = 22
+#     to_port          = 22
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "Application"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "Application"
+#     from_port        = 80
+#     to_port          = 80
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "Application"
-    from_port        = 9966
-    to_port          = 9966
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "Application"
+#     from_port        = 9966
+#     to_port          = 9966
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "TCP Communication between nodes"
-    from_port        = 7946
-    to_port          = 7946
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "TCP Communication between nodes"
+#     from_port        = 7946
+#     to_port          = 7946
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "UDP Communication between nodes"
-    from_port        = 7946
-    to_port          = 7946
-    protocol         = "udp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "UDP Communication between nodes"
+#     from_port        = 7946
+#     to_port          = 7946
+#     protocol         = "udp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "Overlay network traffic"
-    from_port        = 4789
-    to_port          = 4789
-    protocol         = "udp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "Overlay network traffic"
+#     from_port        = 4789
+#     to_port          = 4789
+#     protocol         = "udp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  ingress {
-    description      = "Cluster management communications"
-    from_port        = 2377
-    to_port          = 2377
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   ingress {
+#     description      = "Cluster management communications"
+#     from_port        = 2377
+#     to_port          = 2377
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
   
-  # Allow all outbound traffic
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+#   # Allow all outbound traffic
+#   egress {
+#     from_port        = 0
+#     to_port          = 0
+#     protocol         = "-1"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#     ipv6_cidr_blocks = ["::/0"]
+#   }
 
-  tags = {
-    Name = "Main"
-  }
-}
+#   tags = {
+#     Name = "Main"
+#   }
+# }
 
 
 # Security Group - Allows MYSQL traffic
@@ -217,6 +217,107 @@ resource "aws_security_group" "allow_mysql" {
   }
 }
 
+#Security Groups for K8S
+resource "aws_security_group" "worker_group_mgmt_one" {
+  name_prefix = "worker_group_mgmt_one"
+  vpc_id      = var.vpc_id
+
+  ingress {
+    from_port = 22
+    to_port   = 22
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      "10.0.0.0/8",
+    ]
+  }
+   ingress {
+    description      = "Application"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "Application"
+    from_port        = 9966
+    to_port          = 9966
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+  egress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+
+    cidr_blocks = [
+      "0.0.0.0/0",
+    ]
+  }
+}
+
+resource "aws_security_group" "worker_group_mgmt_two" {
+  name_prefix = "worker_group_mgmt_two"
+  vpc_id      = var.vpc_id
+
+  ingress {
+    from_port = 22
+    to_port   = 22
+    protocol  = "tcp"
+
+    cidr_blocks = [
+      "192.168.0.0/16",
+    ]
+  }
+   ingress {
+    description      = "Application"
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  ingress {
+    description      = "Application"
+    from_port        = 9966
+    to_port          = 9966
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+  egress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+
+    cidr_blocks = [
+      "0.0.0.0/0",
+    ]
+  }
+}
+
+# resource "aws_security_group" "all_worker_mgmt" {
+#   name_prefix = "all_worker_management"
+#   vpc_id      = var.vpc_id
+
+#   ingress {
+#     from_port = 22
+#     to_port   = 22
+#     protocol  = "tcp"
+
+#     cidr_blocks = [
+#       "10.0.0.0/8",
+#       "172.16.0.0/12",
+#       "192.168.0.0/16",
+#     ]
+ 
+
+#   }
+# }
 
 # Route Table Association
 resource "aws_route_table_association" "RTA_public_subnet_1" {
