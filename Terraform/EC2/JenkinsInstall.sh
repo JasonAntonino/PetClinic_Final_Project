@@ -42,3 +42,10 @@ until [[ -n "\$(cat  .jenkins/secrets/initialAdminPassword)" ]]; do
 done
 echo "initial admin password: \$(cat .jenkins/secrets/initialAdminPassword)"
 EOF
+# For Jenkins to run tests of the app we need to install node and karma
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install npm@latest -g
+sudo npm install -g angular
+sudo npm install -g karma
+sudo npm install --save-dev @angular-devkit/build-angular

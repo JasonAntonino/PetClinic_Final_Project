@@ -2,8 +2,9 @@ resource "aws_vpc" "our_vpc" {
   cidr_block       = var.vpc_cidr
 
   tags = {
-    Name = "terraform_vpc"
+    "kubernetes.io/cluster/${local.cluster_name}" = "shared"
   }
+
 }
 
 resource "aws_internet_gateway" "gw" {
@@ -47,5 +48,9 @@ resource "aws_route_table" "private" {
   tags = {
     Name = "terraform_private"
   }
+}
+
+locals {
+  cluster_name = "project-eks"
 }
 
