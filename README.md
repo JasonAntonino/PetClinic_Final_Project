@@ -71,7 +71,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 
 ## CI Pipeline
-
+Our CI pipeline 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Setup Guide
