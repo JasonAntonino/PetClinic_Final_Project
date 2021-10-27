@@ -3,7 +3,7 @@ services:
   
   backend:
     image: springcommunity/spring-petclinic-rest:latest
-    build: ./spring-petclinic-rest
+    build: ./backend
     ports:
       - 9966:9966
     container_name: backend
@@ -19,7 +19,7 @@ services:
 
   frontend:
     image: hdogar/frontend:latest
-    build: ./spring-petclinic-angular
+    build: ./frontend
     depends_on:
       - backend
     container_name: frontend
