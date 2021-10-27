@@ -13,6 +13,7 @@
      * [CI Pipeline]()
 * [Deployment]()
 * [Testing]()
+* [Cost] ()
 * [Areas for improvements]()
 * [Conclusion]()
 * [References]()
@@ -59,7 +60,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 * [Terraform](http://terraform.io)
 * [Docker](https://www.docker.com)
-* [Docker Swarm](https://docs.docker.com/engine/swarm/)
+* [Kubernetes](https://kubernetes.io)
 * [AWS](https://aws.amazon.com)
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
@@ -85,13 +86,23 @@ We decided on using the following tools and technologies to complete the deploym
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
+# Cost
+
+Our cost varied a great deal, this was because we went from using Docker Swarm to using EKS.
+Originally we were projected to spend £7.28 a day with full deployment.
+However, once we switched to using Kubernetes our projected cost estimates were < ADDHERE > 
+
+
+<p align="right"><a href="#top">click to go back to  top</a></p>
+
 
 
 ## Areas of improvement
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
     However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
-*
+* Using Jira instead of Trello to better organise tasks and create burndown charts.
+* A general better understanding of the tools.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -107,7 +118,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 
 ## Acknowledgements
-* We would like to acknowledge my tutors at QA for their teaching of technologies necessary to complete this task. 
+* We would like to acknowledge our tutors at QA for their teaching of technologies necessary to complete this task. 
 * We would also like to thank our team, without our combined cooperation this would not have been possible.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
