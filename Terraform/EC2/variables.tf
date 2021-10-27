@@ -1,19 +1,19 @@
-# Swarm Variables
-variable "swarm_ami" {}
-variable "swarm_instance_type" {}
-variable "availability_zone" {}
-variable "public_subnet_id" {}
-variable "swarm_security_group" {}
+# # Swarm Variables
+# variable "swarm_ami" {}
+# variable "swarm_instance_type" {}
+ variable "availability_zone" {}
+ variable "public_subnet_id" {}
+# variable "swarm_security_group" {}
 
 
-# Foo Instance Variables
-variable "swarm_key_name_1" {}
-variable "foo_private_ip" {}
+# # Foo Instance Variables
+# variable "swarm_key_name_1" {}
+# variable "foo_private_ip" {}
 
 
-# Worker Instance Variables
-variable "swarm_key_name_2" {}
-variable "worker_private_ip" {}
+# # Worker Instance Variables
+# variable "swarm_key_name_2" {}
+# variable "worker_private_ip" {}
 
 
 # Jenkins Instance Variables
