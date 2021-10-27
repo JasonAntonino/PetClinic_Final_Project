@@ -3,22 +3,23 @@ services:
   
   backend:
     image: springcommunity/spring-petclinic-rest:latest
-    build: ./backend
+    #build: ./backend
     ports:
       - 9966:9966
     container_name: backend
-    
-
    
   nginx:
-    image: hdogar/nginx:latest 
+    image: hdogar96/nginx:latest 
     build: ./nginx
     container_name: nginx 
     ports:
-      - 80:80 
+     - 80:80 
+    depends_on:
+     - frontend
+     - backend
 
   frontend:
-    image: hdogar/frontend:latest
+    image: hdogar96/frontend:latest
     build: ./frontend
     depends_on:
       - backend
