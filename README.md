@@ -8,6 +8,7 @@
 * [Project Tracking]()
 * [Risk Assessment]()
 * [Setup Guide]()
+* [Cost] ()
 * [Architecture]()
      * [Databases]()
      * [CI Pipeline]()
@@ -85,7 +86,12 @@ We decided on using the following tools and technologies to complete the deploym
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
+# Cost
 
+In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway. 
+It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS  
+
+<p align="right"><a href="#top">click to go back to  top</a></p>
 
 ## Areas of improvement
 
@@ -107,7 +113,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 
 ## Acknowledgements
-* We would like to acknowledge my tutors at QA for their teaching of technologies necessary to complete this task. 
+* We would like to acknowledge our tutors at QA for their teaching of technologies necessary to complete this task. 
 * We would also like to thank our team, without our combined cooperation this would not have been possible.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
