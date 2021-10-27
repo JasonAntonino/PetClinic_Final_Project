@@ -8,6 +8,7 @@
 * [Project Tracking]()
 * [Risk Assessment]()
 * [Setup Guide]()
+* [Cost] ()
 * [Architecture]()
      * [Databases]()
      * [CI Pipeline]()
@@ -48,9 +49,23 @@ We were expected and required to hold daily stand ups.
 
 # Project Tracking
 
+![image](https://drive.google.com/uc?export=view&id=1oeDcklB2ejK4beDp1qBAKwIfnop-vd9k)
+
+
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Risk Assessment
+
+The risk assessment enabled us to foresee and address any problems. 
+Our risk assessment was continuosly updated, throughout the day the Scrum master would ask if any possible thoughts of risks had occurred whilst working.
+If they had, they were added to the risk assessment. For example, later in the project we realised that using Docker swarm with Jenkins could relate in sensitive information being pushed to Github. 
+Below, you can see our risk assessment early along in the project. 
+However, click [here](https://qalearning-my.sharepoint.com/:x:/g/personal/sstewart_qa_com/EQ4FxXqWGNZClIU_0_Z0280Bp6metj3K_4pN2sDVzWym7Q?e=GgMns5) to see the full risk assessment. 
+
+![image](https://drive.google.com/uc?export=view&id=1OZzRfmJ8Motf4nbfMDfQDNBg7tJnIN8H)
+
+Above: Our risk assessment early on in the process.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -96,6 +111,10 @@ However, once we switched to using Kubernetes our projected cost estimates were 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 
+In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway. 
+It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS  
+
+<p align="right"><a href="#top">click to go back to  top</a></p>
 
 ## Areas of improvement
 
@@ -105,6 +124,24 @@ However, once we switched to using Kubernetes our projected cost estimates were 
 * A general better understanding of the tools.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
+
+## Sprint retrospective
+# What went well
+ * Organised tasks effectively
+ * Good and frequent communication
+ * Motivating team which helped all of us keep focused
+ * Good pair programming work despite working remotely
+ * Good collaboration
+ * Bounced back fast from setbacks
+
+# What could be improved:
+* Time Management
+* Being more meticulous
+* Use kubernetes earlier in the deployment - (have better understanding of tools)
+* What would we do next time:
+* Have more scheduled check in every 2  hours as a group.
+* Having better understanding of team members specific strengths and weaknesses
+
 
 ## Conclusion
 
