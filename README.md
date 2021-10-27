@@ -8,6 +8,7 @@
 * [Project Tracking]()
 * [Risk Assessment]()
 * [Setup Guide]()
+* [Cost] ()
 * [Architecture]()
      * [Databases]()
      * [CI Pipeline]()
@@ -85,15 +86,39 @@ We decided on using the following tools and technologies to complete the deploym
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
+# Cost
 
+In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway. 
+It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS  
+
+<p align="right"><a href="#top">click to go back to  top</a></p>
 
 ## Areas of improvement
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
     However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
-*
+* Use Jira to better organise tasks.
+* Better knowledge and understanding of the tools (links back to the first point)
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
+
+## Sprint retrospective
+# What went well
+ * Organised tasks effectively
+ * Good and frequent communication
+ * Motivating team which helped all of us keep focused
+ * Good pair programming work despite working remotely
+ * Good collaboration
+ * Bounced back fast from setbacks
+
+# What could be improved:
+* Time Management
+* Being more meticulous
+* Use kubernetes earlier in the deployment - (have better understanding of tools)
+* What would we do next time:
+* Have more scheduled check in every 2  hours as a group.
+* Having better understanding of team members specific strengths and weaknesses
+
 
 ## Conclusion
 
@@ -107,7 +132,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 
 ## Acknowledgements
-* We would like to acknowledge my tutors at QA for their teaching of technologies necessary to complete this task. 
+* We would like to acknowledge our tutors at QA for their teaching of technologies necessary to complete this task. 
 * We would also like to thank our team, without our combined cooperation this would not have been possible.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
