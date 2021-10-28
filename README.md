@@ -56,8 +56,8 @@ Below: Our final trello board.
 
 # Risk Assessment
 
-The risk assessment enabled us to foresee and address any problems. 
-Our risk assessment was continuosly updated, throughout the day the Scrum master would ask if any possible thoughts of risks had occurred whilst working.
+The risk assessment enabled us to foresee and address any problems.  
+Our risk assessment was continuously updated, throughout the day the Scrum master would ask if any possible thoughts of risks had occurred whilst working.
 If they had, they were added to the risk assessment. For example, later in the project we realised that using Docker swarm with Jenkins could relate in sensitive information being pushed to Github. 
 Below, you can see our risk assessment early along in the project. 
 However, click [here](https://qalearning-my.sharepoint.com/:x:/g/personal/sstewart_qa_com/EQ4FxXqWGNZClIU_0_Z0280Bp6metj3K_4pN2sDVzWym7Q?e=GgMns5) to see the full risk assessment. 
@@ -70,7 +70,7 @@ Above: Our risk assessment early on in the process.
 
 # Architecture 
 
-As aformentioned, we decided on using the following tools and technologies to complete the deployment. 
+As aforementioned, we decided on using the following tools and technologies to complete the deployment. 
 
 * [Terraform](https://www.terraform.io)
 
@@ -176,7 +176,7 @@ However, once we switched to using Kubernetes our projected cost estimates were 
 # Areas of improvement
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
-    However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
+    However, because it requires separate installations of various CLI tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
 * Using Jira instead of Trello to better organise tasks and create burndown charts.
 * A general better understanding of the tools.
 
