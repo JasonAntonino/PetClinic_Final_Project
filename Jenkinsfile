@@ -27,7 +27,7 @@ pipeline {
                             script{
                                 try{
                                     sh "sudo npm uninstall -g angular-cli @angular/cli"
-                                    sh "sudo npm cache clean"
+                                    sh "sudo npm cache clean --force"
                                     sh "sudo npm install -g @angular/cli@latest"
                                     sh "npm install --save-dev @angular/cli@latest"
                                     sh "if npm version > 5.0 delete package-lock.json file"
