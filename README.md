@@ -13,7 +13,7 @@
      * [CI Pipeline](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#ci-pipeline)
 * [Deployment](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#deployment)
 * [Testing](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#testing)
-* [Cost] (https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#cost)
+* [Cost](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#cost)
 * [Areas for improvements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#areas-of-improvement)
 * [Conclusion](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#conclusion)
 * [References](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#references)
@@ -156,6 +156,8 @@ To bring the app back, you can run the command:
 
 # Deployment
 
+
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Testing
@@ -168,7 +170,14 @@ In terms of cost estimation/projection, we used the AWS calculator and our only 
 It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS.  
 Our cost varied a great deal, this was because we went from using Docker Swarm to using EKS.
 Originally we were projected to spend £7.28 a day with full deployment.
-However, once we switched to using Kubernetes our projected cost estimates were < ADDHERE > 
+However, once we switched to using Kubernetes (whilst using inbuilt database) our projected daily costs were £6.87, as seen below.
+
+![image](https://drive.google.com/uc?export=view&id=18vVaLfscNoFXuD49GXIWZ2ma8-bne7Og)
+
+
+However, if we had been able to fully implement our desired vision our costs would have looked closer to £11.57 per day, as seen below.
+
+![image](https://drive.google.com/uc?export=view&id=1b0i9qdCPSuVqpZXFhr6Xfz3kXPG_34L2)
 
  
 <p align="right"><a href="#top">click to go back to  top</a></p>
