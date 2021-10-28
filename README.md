@@ -125,25 +125,17 @@ It appears the AWS Calculator does not take free tier accounts into consideratio
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
-## Sprint retrospective
-# What went well
- * Organised tasks effectively
- * Good and frequent communication
- * Motivating team which helped all of us keep focused
- * Good pair programming work despite working remotely
- * Good collaboration
- * Bounced back fast from setbacks
 
-# What could be improved:
-* Time Management
-* Being more meticulous
-* Use kubernetes earlier in the deployment - (have better understanding of tools)
-* What would we do next time:
-* Have more scheduled check in every 2  hours as a group.
-* Having better understanding of team members specific strengths and weaknesses
 
+
+
+
+
+
+ 
 
 ## Conclusion
+The areas of improvement we have identified would be having more scheduled check ins every 2 hours, to go through everyones progress. We could go over every team members specific strengths and weaknesses, to better organise and assign tasks. This would mean faster deployment and less mistakes. During our project week, our time management could have been better, as we stayed over the working hours. We could have more frequent breaksto avoid overworking ourselves. Another area of improvement we as a group have identified  is being more metilicous by peer reviewing code before pushing it in to the reposistory. The biggest caveat we had during this project was lack of time and knowledge of the tools. If we had more time and knowledge we would have made less mistakes in the beginning by using kubernetes faster in the deployment instead of docker swarm.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -152,7 +144,6 @@ It appears the AWS Calculator does not take free tier accounts into consideratio
 (https://www.ibm.com/cloud/blog/docker-swarm-vs-kubernetes-a-comparison)
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
-
 
 ## Acknowledgements
 * We would like to acknowledge our tutors at QA for their teaching of technologies necessary to complete this task. 
