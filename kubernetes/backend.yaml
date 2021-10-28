@@ -7,8 +7,7 @@ spec:
   selector:
     app: backend
   ports:
-  -protocol: TCP
-  - name: http
+  - protocol: TCP
     port: 9966
     targetPort: 9966
 ---
@@ -30,4 +29,4 @@ spec:
       - name: backend
         image: springcommunity/spring-petclinic-rest:latest
         ports:
-          - containerPort: 9966
+        - containerPort: 9966

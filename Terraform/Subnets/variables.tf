@@ -6,7 +6,7 @@ variable "public_subnet_1_cidr" {}
 variable "availability_zone_1" {}
 
 # Private Subnet 1 CIDR and Availability Zone
-variable "private_subnet_1_cidr" {}
+variable "public_subnet_2_cidr" {}
 variable "availability_zone_2" {}
 
 # Private Subnet 2 CIDR and Availability Zone

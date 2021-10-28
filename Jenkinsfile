@@ -1,64 +1,73 @@
 pipeline { 
     agent any
+    triggers {
+        githubPush()
+    }
     options {
         skipStagesAfterUnstable()
     }
     environment {
-            app_version = 'v1'
-            rollback = 'false'
-            testPassed = false
+        app_version = 'v1'
+        rollback = 'false'
+        username = credentials('user')
+        password = credentials('password')
+    }
+    parameters{
+        booleanParam(name: "requirementsInstalled", defaultValue: false)
     }
     stages{
-        stage('Testing'){
-            steps{
-                    sh "rm -rf PetClinic_Final_Project"
-                    sh "ls -al"
-                    sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
-                    sh "ls -al"
-                    
-                    dir('PetClinic_Final_Project') {
-                        sh "ls -al"
-                        sh "git checkout dev"
-                        dir('frontend') {
-                            sh "ls -al"
-                            script{
-                                try{
-                                    sh 'ng serve'
-                                    sh 'ng test'
-                                }catch(err){
-                                    testPassed = false
-                                }
-                            }
-                        }
-                    }
-                    script{
-                        testPassed = true
-                    }
-            }
-        }
-        stage('Build Image'){
+        stage('Install Dependencies'){
             steps{
                 script{
-                    if (env.testPassed == true){
-                        // Build the Docker image
-                        image = docker.build("hdogar/frontend:latest")
-    
-                        // Push Docker image to DockerHub
-                        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-    					    image.push()
-    				    }
+                    if(params.requirementsInstalled == false){
+                        sh "sudo npm uninstall -g angular-cli @angular/cli"
+                        sh "sudo npm cache clean --force"
+                        sh "sudo npm install -g @angular/cli@8.3.25"
+                        sh "sudo npm install --save-dev @angular/cli@8.3.25"
+                        sh "sudo npm install"
+                        sh "sudo npm i karma-cli"
+                        sh "rm -rf package-lock.json"
+                        sh "sudo npm install karma-junit-reporter --save-dev"
+                        sh "sudo npm i -D puppeteer karma-chrome-launcher"
                     }
+                    else{
+                        params.requirementsInstalled = true
+                    }
+                    
                 }
                 
+            }
+        }
+        stage('Testing'){
+            steps{
+                dir('frontend') {
+                    script{
+                            try{
+                                sh "ng build"
+                                sh 'ng test --karma-config karma.conf.js --watch=false'
+                            }catch(err){
+                                testPassed = false
+                            }
+                    }
+                }
+            }
+        }
+        stage('Build and Push Image'){
+            steps{
+                sh "ls -al"
+                sh "echo $password | sudo docker login -u $username --password-stdin"
+                sh "sudo docker-compose build && sudo docker-compose push"
             }
         }
         stage('Deploy App'){
             steps{
-                dir('PetClinic_Final_Project') {
-                    sh "sudo docker-compose pull && docker-compose up -d"
+                sh "ls -al"
+                dir('kubernetes') {
+                    sh "ls -al"
+                    sh "kubectl apply -f ."
                 }
-                
             }
         }
     }
 }
+

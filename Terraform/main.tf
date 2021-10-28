@@ -20,7 +20,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = local.cluster_name
   cluster_version = "1.20"
-  subnets         = [module.Subnets.public_subnet_1_id]
+  subnets         = [module.Subnets.public_subnet_1_id, module.Subnets.public_subnet_2_id]
 
   tags = {
     Environment = "production"
@@ -82,7 +82,7 @@ module "Subnets" {
   vpc_id             = module.VPC.vpc_id
   public_subnet_1_cidr = "10.0.1.0/24"
   availability_zone_1  = "eu-west-1a"
-  private_subnet_1_cidr = "10.0.2.0/24"
+  public_subnet_2_cidr = "10.0.2.0/24"
   availability_zone_2  = "eu-west-1b"
   private_subnet_2_cidr = "10.0.3.0/24"
   availability_zone_3  = "eu-west-1c"
