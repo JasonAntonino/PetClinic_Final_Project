@@ -34,6 +34,8 @@ pipeline {
                                     sh "rm -rf package-lock.json"
                                     // sh "if npm version > 5.0 delete package-lock.json"
                                     sh "npm install"
+                                    sh "npm install karma-junit-reporter --save-dev"
+                                    sh "karma start -d --reporters junit,dots"
                                     sh 'ng test'
                                 }catch(err){
                                     testPassed = false
