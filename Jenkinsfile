@@ -21,7 +21,7 @@ pipeline {
                     
                     dir('PetClinic_Final_Project') {
                         sh "ls -al"
-                        sh "git checkout dev"
+                        sh "git checkout terraform-k8s"
                         dir('frontend') {
                             sh "ls -al"
                             script{
@@ -36,7 +36,7 @@ pipeline {
                                     sh "npm install"
                                     sh "npm install karma-junit-reporter --save-dev"
                                     sh "karma start -d --reporters junit,dots"
-                                    sh 'ng test --watch=false'
+                                    sh 'ng test'
                                 }catch(err){
                                     testPassed = false
                                 }
