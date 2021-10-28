@@ -9,8 +9,6 @@ pipeline {
     environment {
         app_version = 'v1'
         rollback = 'false'
-        testPassed = false
-        
         username = credentials('user')
         password = credentials('password')
     }
@@ -25,7 +23,7 @@ pipeline {
                         sh "sudo npm uninstall -g angular-cli @angular/cli"
                         sh "sudo npm cache clean --force"
                         sh "sudo npm install -g @angular/cli@8.3.25"
-                        sh "sudo npm install --save-dev @angular/cli@8.3.25" //Updates local version?
+                        sh "sudo npm install --save-dev @angular/cli@8.3.25"
                         sh "sudo npm install"
                         sh "sudo npm i karma-cli"
                         sh "rm -rf package-lock.json"
@@ -42,43 +40,25 @@ pipeline {
         }
         stage('Testing'){
             steps{
-                // sh "ls -al"
-                // sh "git checkout terraform-k8s"
                 dir('frontend') {
-                    // sh "ls -al"
                     script{
-                        // if(env.requirementsInstalled == false){
                             try{
-                                // sh "sudo npm uninstall -g angular-cli @angular/cli"
-                                // sh "sudo npm cache clean --force"
-                                // sh "sudo npm install -g @angular/cli@8.3.25"
-                                // sh "sudo npm install --save-dev @angular/cli@8.3.25" //Updates local version?
-                                // sh "sudo npm install"
-                                // sh "sudo npm i karma-cli"
-                                // sh "rm -rf package-lock.json"
-                                // sh "sudo npm install karma-junit-reporter --save-dev"
-                                // sh "sudo npm i -D puppeteer karma-chrome-launcher"
                                 sh "ng build"
                                 sh 'ng test --karma-config karma.conf.js --watch=false'
                             }catch(err){
                                 testPassed = false
                             }
-                            // requirementsInstalled == true
-                        // }
                     }
-                }
-                script{
-                    testPassed = true
                 }
             }
         }
-        // stage('Build and Push Image'){
-        //     steps{
-        //         sh "ls -al"
-        //         sh "echo $password | sudo docker login -u $username --password-stdin"
-        //         sh "sudo docker-compose build && sudo docker-compose push"
-        //     }
-        // }
+        stage('Build and Push Image'){
+            steps{
+                sh "ls -al"
+                sh "echo $password | sudo docker login -u $username --password-stdin"
+                sh "sudo docker-compose build && sudo docker-compose push"
+            }
+        }
         stage('Deploy App'){
             steps{
                 sh "ls -al"
