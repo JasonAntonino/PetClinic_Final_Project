@@ -156,6 +156,39 @@ To bring the app back, you can run the command:
 
 # Deployment
 
+Deployment:
+
+With the app running through docker, we then moved on to setting up the docker swarm. To do this we spun up two medium instances on AWS where one would act as the swarm manager and the other would be a worker. On the manager instance we used the command:
+
+* docker swarm init
+
+as this initialised the swarm and set that instance as the manager. The manager then output a new command that we had to run in the worker so that it knew which instance to join as the worker. The command was in the form of:
+
+* docker swarm join --token [TOKEN] [IP_ADDRESS]:[PORT]
+
+Once this was input into the worker we ready to deploy the stack on the manager thanks to the docker-compose.yaml file we had already created previously. we just needed to use:
+
+* docker stack deploy --compose-file docker-compose.yaml petclinic
+
+This then deployed the stack on the manager and worker. To check that the stack was correctly deployed we listed the services in the terminal and could see that all the services were in fact running. The command to do this was:
+
+* docker service ls
+
+At this point we realised we would face issues when trying to automate this process through jenkins as we would need to get the join token from the manager node and input this into the worker. After a few failed attempts of getting jenkins to do so, we decided to make the change from using docker swarm to using kubernetes instead. We had to make some changes to our terraform so that it would now make use of eks (aws's kubernetes service) and we also had to create ConfigMap manifests for the frontend, backend and nginx.
+
+![frontend-yaml](https://user-images.githubusercontent.com/88770813/139282358-77755053-fc0a-439e-9023-2e8708ceae3a.PNG)
+
+![backend-yaml](https://user-images.githubusercontent.com/88770813/139282442-a7b941d3-44cf-4b9f-b1fb-31c2c0b24a9f.PNG)
+
+![nginx-yaml](https://user-images.githubusercontent.com/88770813/139282486-28053945-c001-4f00-a750-5e4b4c013d97.PNG)
+
+Once these were all created we could then run
+
+* terraform plan
+* terraform apply
+
+to create our infrastructure and start our instances. Now we only had to set up jenkins
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Testing
