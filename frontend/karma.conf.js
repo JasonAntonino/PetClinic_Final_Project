@@ -22,6 +22,11 @@ module.exports = function (config) {
     
 
     reporters: ['dots', 'junit'],
+      plugins : [
+        'karma-phantomjs-launcher',
+        'karma-jasmine',
+        'karma-junit-reporter'
+      ],
       junitReporter: {
         outputFile: 'test-results.xml'
       },
