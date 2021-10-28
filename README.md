@@ -249,7 +249,7 @@ We utilised pair programming which enabled us to bounce back fast from setbacks.
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Authors
-Jason Antonino, Matthew Logan, Hamza Dogar, Charanjit Pooni 
+Jason Antonino, Scarlett Stewart, Matthew Logan, Hamza Dogar, Charanjit Pooni 
 
 # Licenses
 
