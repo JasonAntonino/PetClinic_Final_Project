@@ -66,8 +66,6 @@ pipeline {
                     sh "ls -al"
                     sh "kubectl apply -f ."
                 }
-
-                
             }
         }
     }
