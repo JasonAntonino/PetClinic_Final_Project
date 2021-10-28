@@ -38,7 +38,7 @@ pipeline {
                             }catch(err){
                                 testPassed = false
                             }
-                            requirementsInstalled == true
+                            // requirementsInstalled == true
                         }  
                     }
                 }
