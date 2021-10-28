@@ -4,8 +4,8 @@ output "public_subnet_1_id" {
 }
 
 # Outputs the ID of private subnet 1
-output "private_subnet_1_id" {
-  value = aws_subnet.private_subnet_1.id
+output "public_subnet_2_id" {
+  value = aws_subnet.public_subnet_2.id
 }
 
 # Outputs the ID of private subnet 1
@@ -64,8 +64,8 @@ output "public_subnet_1_cidr" {
 }
 
 # Outputs the CIDR block of private subnet 1
-output "private_subnet_1_cidr" {
-  value = var.private_subnet_1_cidr
+output "public_subnet_2_cidr" {
+  value = var.public_subnet_2_cidr
 }
 
 # Outputs the CIDR block of private subnet 2
