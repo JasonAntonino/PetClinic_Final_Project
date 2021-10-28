@@ -18,7 +18,7 @@ pipeline {
                     // sh "ls -al"
                     // sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
                     // sh "ls -al"
-                    
+                    sh "ls -al"
                     dir('PetClinic_Final_Project') {
                         sh "ls -al"
                         sh "git checkout terraform-k8s"
