@@ -31,7 +31,8 @@ pipeline {
                                     sh "sudo npm install -g @angular/cli@latest"
                                     sh "npm install --save-dev @angular/cli@latest"
                                     sh "npm i karma-cli"
-                                    // sh "if npm version > 5.0 delete package-lock.json file"
+                                    sh "rm -rf package-lock.json"
+                                    // sh "if npm version > 5.0 delete package-lock.json"
                                     sh "npm install"
                                     sh 'ng test'
                                 }catch(err){
