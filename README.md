@@ -26,30 +26,30 @@
 For our project we were given a working CRUD application that had a separate Frontend and backend. 
 It is our job to make it have a separate database to essentially transform it into a 3 tiered architecture.
 
-- [ ] Frontend (makes HTTP requests to the backend, that his front end gets its contents.) Angular a Typescript version of flask.
-- [ ] Backend (API, just returns information,no HTML attached)  Spring boot, (Java version of flask)
-- [ ] Database
-- [ ] 
-We needed to containerise the frontend and the backend within Docker , successfully allowing the backend to interact with the database.
 
+The frontend and backend application are both in languages we are not yet accustomed to. The frontend was an Angular application in typescript and the backend was a spring boot application in Java. We were required to deploy the application or in simpler terms making the application available via the internet. As a group we had to decided which tools would be best suited to our project. We eventually decided on: 
 
-Taking an application, putting it into a container, and it still work inside the container.
+* [Terraform](http://terraform.io)
+* [Docker](https://www.docker.com)
+* [Kubernetes](https://kubernetes.io)
+* [AWS](https://aws.amazon.com)
 
-
-The frontend and backend application are both in languages we are not yet accustomed to. The frontend was an Angular application in typescript and the backend was a spring boot application in Java. We were required to deploy the application or in simpler terms making the application available via the internet. As a group we had to decided which tools would be best suited to our project. We eventually decided on XYZ. The reasoning for these choices is as follows.
-
-
-Docker swarm
-
-
-We were expected and required to hold daily stand ups.
+The reasoning for these tools can be found in [[Architecture]
+We were also expected and required to hold daily stand ups with a Scrum master in place and inline with Agile methodologies.
 
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Project Tracking
 
+We kept a log of our tasks and decided to keep it to one sprint implementing MOSCOW methodologies.
+
+
 ![image](https://drive.google.com/uc?export=view&id=1oeDcklB2ejK4beDp1qBAKwIfnop-vd9k)
+
+above: Our inital Trello board. 
+
+Below: Our final trello board.
 
 
 
@@ -71,22 +71,32 @@ Above: Our risk assessment early on in the process.
 
 # Architecture 
 
-We decided on using the following tools and technologies to complete the deployment:
+As aformentioned, we decided on using the following tools and technologies to complete the deployment. 
 
-* [Terraform](http://terraform.io)
+* [Terraform]
+Using Infrastucture as Code 
+
 * [Docker](https://www.docker.com)
 * [Kubernetes](https://kubernetes.io)
 * [AWS](https://aws.amazon.com)
 
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 ## Databases
-
+We were intending to switch from the inbuilt database to RDS but after having Docker Swarm issues and switching to kubernetes issues time did not permit.
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 
 ## CI Pipeline
 Our CI pipeline 
+
+Attached is our CI Pipeline that displays how we intended to implement it all for a successful deployment. 
+
+![image](https://drive.google.com/uc?export=view&id=1jt36BnxQQjvoHgwG6GzuYjUszp1GaQxW)
+
+Above: Our CI pipeline 
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Setup Guide
@@ -103,17 +113,13 @@ Our CI pipeline
 
 # Cost
 
+In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway.
+It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS.  
 Our cost varied a great deal, this was because we went from using Docker Swarm to using EKS.
 Originally we were projected to spend £7.28 a day with full deployment.
 However, once we switched to using Kubernetes our projected cost estimates were < ADDHERE > 
 
-
-<p align="right"><a href="#top">click to go back to  top</a></p>
-
-
-In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway. 
-It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS  
-
+ 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 ## Areas of improvement
@@ -126,16 +132,11 @@ It appears the AWS Calculator does not take free tier accounts into consideratio
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 
-
-
-
-
-
-
- 
-
 ## Conclusion
-The areas of improvement we have identified would be having more scheduled check ins every 2 hours, to go through everyones progress. We could go over every team members specific strengths and weaknesses, to better organise and assign tasks. This would mean faster deployment and less mistakes. During our project week, our time management could have been better, as we stayed over the working hours. We could have more frequent breaksto avoid overworking ourselves. Another area of improvement we as a group have identified  is being more metilicous by peer reviewing code before pushing it in to the reposistory. The biggest caveat we had during this project was lack of time and knowledge of the tools. If we had more time and knowledge we would have made less mistakes in the beginning by using kubernetes faster in the deployment instead of docker swarm.
+This project allowed our team to evaluate the pros and the cons of the tools and technologies we had considered, in a very hands on way. 
+For instance, we are now very aware of not only the capabilities but limitations and difficulties Docker Swarm can come with. On the otherhand, our understanding and useage of Terraform has grown exponentially. 
+As a group we organised tasks effectively with good and frequent motivating communication. 
+We utilised pair programming which enabled us to bounce back fast from setbacks.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
