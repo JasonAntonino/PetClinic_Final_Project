@@ -10,13 +10,13 @@ resource "aws_subnet" "public_subnet_1" {
   }
 }
 
-# Subnet 2 (Private)
-resource "aws_subnet" "private_subnet_1" {
+# Subnet 2 (Public)
+resource "aws_subnet" "public_subnet_2" {
   vpc_id            = var.vpc_id
-  cidr_block        = var.private_subnet_1_cidr
+  cidr_block        = var.public_subnet_2_cidr
   availability_zone = var.availability_zone_2
   tags = {
-    Name = "private_subnet_1"
+    Name = "public_subnet_2"
   }
 }
 
@@ -33,7 +33,7 @@ resource "aws_subnet" "private_subnet_2" {
 # Subnet group (contains public_subnet_1 and public_subnet_2)
 resource "aws_db_subnet_group" "subnet_group" {
   name       = "rds"
-  subnet_ids = [aws_subnet.public_subnet_1.id, aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id]
+  subnet_ids = [aws_subnet.public_subnet_1.id, aws_subnet.public_subnet_2.id, aws_subnet.private_subnet_2.id]
 
   tags = {
     Name = "My DB subnet group"
@@ -326,8 +326,8 @@ resource "aws_route_table_association" "RTA_public_subnet_1" {
 }
 
 resource "aws_route_table_association" "RTA_private_subnet_1" {
-  subnet_id      = aws_subnet.private_subnet_1.id
-  route_table_id = var.private_route_table_id
+  subnet_id      = aws_subnet.public_subnet_2.id
+  route_table_id = var.public_route_table_id
 }
 
 resource "aws_route_table_association" "RTA_private_subnet_2" {
