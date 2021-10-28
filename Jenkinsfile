@@ -53,7 +53,7 @@ pipeline {
         stage('Build and Push Image'){
             steps{
                 sh "ls -al"
-                sh "docker login -u $username -p $password"
+                sh "docker login -u $username --password-stdin $password "
                 sh "docker-compose build && docker-compose push"
             }
         }
