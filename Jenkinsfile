@@ -75,7 +75,7 @@ pipeline {
                     sh "ls -al"
                     dir('kubernetes') {
                         sh "ls -al"
-                        sh "kubectl apply -f frontend.yaml nginx.yaml backend.yaml"
+                        sh "kubectl apply -f ."
                     }
                 // }
                 
