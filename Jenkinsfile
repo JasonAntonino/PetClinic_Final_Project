@@ -28,8 +28,8 @@ pipeline {
                                 try{
                                     sh "sudo npm uninstall -g angular-cli @angular/cli"
                                     sh "sudo npm cache clean --force"
-                                    sh "sudo npm install -g @angular/cli@latest"
-                                    sh "sudo npm install --save-dev @angular/cli@latest" //Updates local version?
+                                    sh "sudo npm install -g @angular/cli@8.0.6"
+                                    sh "sudo npm install --save-dev @angular/cli@8.0.6" //Updates local version?
                                     sh "npm install"
                                     sh "npm i karma-cli"
                                     sh "rm -rf package-lock.json"
