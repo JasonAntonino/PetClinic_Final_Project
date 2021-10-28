@@ -71,12 +71,12 @@ pipeline {
                 // sh "rm -rf PetClinic_Final_Project"
                 // sh "ls -al"
                 // sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
-                dir('PetClinic_Final_Project') {
+                // dir('PetClinic_Final_Project') {
                     sh "ls -al"
                     dir('kubernetes') {
                         sh "kubectl apply -f frontend.yaml nginx.yaml backend.yaml"
                     }
-                }
+                // }
                 
             }
         }
