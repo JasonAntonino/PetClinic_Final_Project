@@ -10,15 +10,18 @@ pipeline {
         app_version = 'v1'
         rollback = 'false'
         testPassed = false
-        requirementsInstalled = false
+        
         username = credentials('user')
         password = credentials('password')
+    }
+    parameters{
+        booleanParam(name: "requirementsInstalled", defaultValue: false)
     }
     stages{
         stage('Install Dependencies'){
             steps{
                 script{
-                    if(env.requirementsInstalled == false){
+                    if(params.requirementsInstalled == false){
                         sh "sudo npm uninstall -g angular-cli @angular/cli"
                         sh "sudo npm cache clean --force"
                         sh "sudo npm install -g @angular/cli@8.3.25"
@@ -30,7 +33,7 @@ pipeline {
                         sh "sudo npm i -D puppeteer karma-chrome-launcher"
                     }
                     else{
-                        requirementsInstalled = true
+                        params.requirementsInstalled = true
                     }
                     
                 }
