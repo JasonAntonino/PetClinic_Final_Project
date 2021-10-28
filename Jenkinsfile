@@ -74,6 +74,7 @@ pipeline {
                 // dir('PetClinic_Final_Project') {
                     sh "ls -al"
                     dir('kubernetes') {
+                        sh "ls -al"
                         sh "kubectl apply -f frontend.yaml nginx.yaml backend.yaml"
                     }
                 // }
