@@ -20,7 +20,7 @@ pipeline {
                 dir('frontend') {
                     sh "ls -al"
                     script{
-                        // if(env.requirementsInstalled == false){
+                        if(env.requirementsInstalled == false){
                             try{
                                 sh "sudo npm uninstall -g angular-cli @angular/cli"
                                 sh "sudo npm cache clean --force"
@@ -38,8 +38,8 @@ pipeline {
                             }catch(err){
                                 testPassed = false
                             }
-                            // requirementsInstalled == true
-                        // }
+                            requirementsInstalled == true
+                        }
                          
                     }
                 }
@@ -48,22 +48,23 @@ pipeline {
                 }
             }
         }
-        // stage('Build Image'){
-        //     steps{
-        //         script{
-        //             if (env.testPassed == true){
-        //                 // Build the Docker image
-        //                 image = docker.build("hdogar/frontend:latest")
+        stage('Build Image'){
+            steps{
+                sh "ls -al"
+                // script{
+                //     if (env.testPassed == true){
+                //         // Build the Docker image
+                //         image = docker.build("hdogar/frontend:latest")
     
-        //                 // Push Docker image to DockerHub
-        //                 docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-    	// 				    image.push()
-    	// 			    }
-        //             }
-        //         }
+                //         // Push Docker image to DockerHub
+                //         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+    			// 		    image.push()
+    			// 	    }
+                //     }
+                // }
                 
-        //     }
-        // }
+            }
+        }
         stage('Deploy App'){
             steps{
                 sh "ls -al"
