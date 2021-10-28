@@ -17,6 +17,7 @@
 * [Areas for improvements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#areas-of-improvement)
 * [Conclusion](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#conclusion)
 * [References](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#references)
+* [Authors] (https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#authors)
 * [Acknowledgements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#acknowledgements)
 * [Licenses](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#licenses)
 
@@ -41,7 +42,7 @@ We were also expected and required to hold daily stand ups with a Scrum master i
 
 # Project Tracking
 
-We kept a log of our tasks and decided to keep it to one sprint implementing MOSCOW methodologies.
+We kept a log of our tasks within our Trello Kanban style board and decided to keep it to one sprint implementing MOSCOW methodologies.
 
 
 ![image](https://drive.google.com/uc?export=view&id=1oeDcklB2ejK4beDp1qBAKwIfnop-vd9k)
@@ -83,7 +84,9 @@ We used Docker to containerise the applications.
 Used Kubernetes to deploy containers to clusters
 
 * [AWS](https://aws.amazon.com)
-We used AWS for services such as the EKS clusters, EC2's
+
+We used AWS for services such as the EKS clusters, EC2's and would have eventually used it for the RDS.
+
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -244,6 +247,9 @@ We utilised pair programming which enabled us to bounce back fast from setbacks.
 * We would also like to thank our team, without our combined cooperation this would not have been possible.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
+
+# Authors
+Jason Antonino, Matthew Logan, Hamza Dogar, Charanjit Pooni 
 
 # Licenses
 
