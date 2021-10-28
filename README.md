@@ -17,6 +17,7 @@
 * [Areas for improvements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#areas-of-improvement)
 * [Conclusion](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#conclusion)
 * [References](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#references)
+* [Authors] (https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#authors)
 * [Acknowledgements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#acknowledgements)
 * [Licenses](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#licenses)
 
@@ -41,7 +42,7 @@ We were also expected and required to hold daily stand ups with a Scrum master i
 
 # Project Tracking
 
-We kept a log of our tasks and decided to keep it to one sprint implementing MOSCOW methodologies.
+We kept a log of our tasks within our Trello Kanban style board and decided to keep it to one sprint implementing MOSCOW methodologies.
 
 
 ![image](https://drive.google.com/uc?export=view&id=1oeDcklB2ejK4beDp1qBAKwIfnop-vd9k)
@@ -83,7 +84,9 @@ We used Docker to containerise the applications.
 Used Kubernetes to deploy containers to clusters
 
 * [AWS](https://aws.amazon.com)
-We used AWS for services such as the EKS clusters, EC2's
+
+We used AWS for services such as the EKS clusters, EC2's and would have eventually used it for the RDS.
+
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -192,6 +195,9 @@ to create our infrastructure and start our instances. Now we only had to set up 
 
 # Testing
 
+An essential part of the CI Pipeline is of course testing to ensure that any changes to the code base are not going to bring down a working version of the app or any of its individual features. Unit tests are an effective way to check new code for any errors and automating this process ensures that no code can slip through untested. Jenkins is a powerful automation server which we implemented to run the unit tests provided to us with the frontend code, with the intention that a successful test would trigger a new build of the Artefacts to be pushed to the DockerHub Registry and then a redeployment of the app would occur, updating the app. Whilst we were able to run the tests succesfully, this resulted in the pipeline hanging as it required some manual input to connect to the karma server and run the debugging. As of yet we have been unable to generate a build of our pipeline where the build does not hang, though we have been able to succesfully automate the deployment of the app.
+
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Cost
@@ -241,6 +247,9 @@ We utilised pair programming which enabled us to bounce back fast from setbacks.
 * We would also like to thank our team, without our combined cooperation this would not have been possible.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
+
+# Authors
+Jason Antonino, Matthew Logan, Hamza Dogar, Charanjit Pooni 
 
 # Licenses
 
