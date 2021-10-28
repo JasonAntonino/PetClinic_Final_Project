@@ -12,33 +12,38 @@ pipeline {
             testPassed = false
     }
     stages{
-        // stage('Testing'){
-        //     steps{
-        //             sh "rm -rf PetClinic_Final_Project"
-        //             sh "ls -al"
-        //             sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
-        //             sh "ls -al"
+        stage('Testing'){
+            steps{
+                    sh "rm -rf PetClinic_Final_Project"
+                    sh "ls -al"
+                    sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
+                    sh "ls -al"
                     
-        //             dir('PetClinic_Final_Project') {
-        //                 sh "ls -al"
-        //                 sh "git checkout dev"
-        //                 dir('frontend') {
-        //                     sh "ls -al"
-        //                     script{
-        //                         try{
-        //                             sh 'ng serve'
-        //                             sh 'ng test'
-        //                         }catch(err){
-        //                             testPassed = false
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //             script{
-        //                 testPassed = true
-        //             }
-        //     }
-        // }
+                    dir('PetClinic_Final_Project') {
+                        sh "ls -al"
+                        sh "git checkout dev"
+                        dir('frontend') {
+                            sh "ls -al"
+                            script{
+                                try{
+                                    sh "sudo npm uninstall -g angular-cli @angular/cli"
+                                    sh "sudo npm cache clean"
+                                    sh "sudo npm install -g @angular/cli@latest"
+                                    sh "npm install --save-dev @angular/cli@latest"
+                                    sh "if npm version > 5.0 delete package-lock.json file"
+                                    sh "npm install"
+                                    sh 'ng test'
+                                }catch(err){
+                                    testPassed = false
+                                }
+                            }
+                        }
+                    }
+                    script{
+                        testPassed = true
+                    }
+            }
+        }
         // stage('Build Image'){
         //     steps{
         //         script{
