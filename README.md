@@ -192,6 +192,9 @@ to create our infrastructure and start our instances. Now we only had to set up 
 
 # Testing
 
+An essential part of the CI Pipeline is of course testing to ensure that any changes to the code base are not going to bring down a working version of the app or any of its individual features. Unit tests are an effective way to check new code for any errors and automating this process ensures that no code can slip through untested. Jenkins is a powerful automation server which we implemented to run the unit tests provided to us with the frontend code, with the intention that a successful test would trigger a new build of the Artefacts to be pushed to the DockerHub Registry and then a redeployment of the app would occur, updating the app. Whilst we were able to run the tests succesfully, this resulted in the pipeline hanging as it required some manual input to connect to the karma server and run the debugging. As of yet we have been unable to generate a build of our pipeline where the build does not hang, though we have been able to succesfully automate the deployment of the app.
+
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Cost
