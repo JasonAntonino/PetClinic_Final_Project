@@ -23,6 +23,7 @@ pipeline {
                         sh "sudo npm uninstall -g angular-cli @angular/cli"
                         sh "sudo npm cache clean --force"
                         sh "sudo npm install -g @angular/cli@8.3.25"
+                        sh "sudo npm install --save-dev @angular-devkit/build-angular"
                         sh "sudo npm install --save-dev @angular/cli@8.3.25"
                         sh "sudo npm install"
                         sh "sudo npm i karma-cli"
