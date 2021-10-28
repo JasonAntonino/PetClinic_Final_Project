@@ -36,7 +36,7 @@ pipeline {
                                     sh "npm install"
                                     sh "npm install karma-junit-reporter --save-dev"
                                     sh "karma start -d --reporters junit,dots"
-                                    sh 'ng test'
+                                    sh 'ng test --watch=false'
                                 }catch(err){
                                     testPassed = false
                                 }
