@@ -14,10 +14,10 @@ pipeline {
     stages{
         stage('Testing'){
             steps{
-                    sh "rm -rf PetClinic_Final_Project"
-                    sh "ls -al"
-                    sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
-                    sh "ls -al"
+                    // sh "rm -rf PetClinic_Final_Project"
+                    // sh "ls -al"
+                    // sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
+                    // sh "ls -al"
                     
                     dir('PetClinic_Final_Project') {
                         sh "ls -al"
