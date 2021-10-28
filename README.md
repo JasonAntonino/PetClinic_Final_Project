@@ -268,7 +268,7 @@ GNU GENERAL PUBLIC LICENSE
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
-see [LICENSE.txt]() for more information.
+see [LICENSE](https://github.com/JasonAntonino/PetClinic_Final_Project/blob/dev/LICENSE) for more information.
 
 
 
