@@ -17,7 +17,7 @@
 * [Areas for improvements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#areas-of-improvement)
 * [Conclusion](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#conclusion)
 * [References](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#references)
-* [Authors] (https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#authors)
+* [Authors](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#authors)
 * [Acknowledgements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#acknowledgements)
 * [Licenses](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#licenses)
 
