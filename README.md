@@ -75,17 +75,20 @@ As aforementioned, we decided on using the following tools and technologies to c
 
 * [Terraform](https://www.terraform.io)
 
-Using Infrastucture as Code to provision the resources within AWS to run.
+Using Infrastucture as Code to provision the resources within AWS to run easily and allow for the creation of the infrastructure to be automated. Would allow us to create the VPC, subnets, security groups, etc.
 
 * [Docker](https://www.docker.com)
-We used Docker to containerise the applications.
+
+We used Docker to containerise the applications. Allow for the application to be deployed smoothly as the environments that would be created would be consistent. Would be able to containerise all aspects of app (frontend, backend and nginx reverse proxy)
 
 * [Kubernetes](https://kubernetes.io)
-Used Kubernetes to deploy containers to clusters
+
+
+Is compatible with the docker images we would create for the application. AWS also provides eks (Elastic Kubernetes Service) so it is a convenient tool.
 
 * [AWS](https://aws.amazon.com)
 
-We used AWS for services such as the EKS clusters, EC2's and would have eventually used it for the RDS.
+We used AWS for services such as the EKS clusters, EC2's, VPC and Subnets. AWS provides all the infrastructure needed to deploy the app on.
 
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
