@@ -81,5 +81,3 @@ sudo npm install npm@latest -g
 sudo npm install -g angular
 sudo npm install -g karma
 sudo npm install --save-dev @angular-devkit/build-angular
-
-
