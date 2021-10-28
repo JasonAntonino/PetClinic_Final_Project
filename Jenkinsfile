@@ -15,7 +15,7 @@ pipeline {
         password = credentials('password')
     }
     stages{
-        stage('Testing'){
+        stage('Install Dependencies'){
             steps{
                 script{
                     if(env.requirementsInstalled == false){
