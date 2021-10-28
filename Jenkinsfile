@@ -19,7 +19,7 @@ pipeline {
                     // sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
                     // sh "ls -al"
                     sh "ls -al"
-                    dir('PetClinic_Final_Project') {
+                    // dir('PetClinic_Final_Project') {
                         sh "ls -al"
                         sh "git checkout terraform-k8s"
                         dir('frontend') {
@@ -44,7 +44,7 @@ pipeline {
                             //     }
                             // }
                         }
-                    }
+                    // }
                     script{
                         testPassed = true
                     }
