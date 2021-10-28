@@ -7,10 +7,12 @@ pipeline {
         skipStagesAfterUnstable()
     }
     environment {
-            app_version = 'v1'
-            rollback = 'false'
-            testPassed = false
-            requirementsInstalled = false
+        app_version = 'v1'
+        rollback = 'false'
+        testPassed = false
+        requirementsInstalled = false
+        username = credentials('user')
+        password = credentials('password')
     }
     stages{
         stage('Testing'){
@@ -48,21 +50,11 @@ pipeline {
                 }
             }
         }
-        stage('Build Image'){
+        stage('Build and Push Image'){
             steps{
                 sh "ls -al"
-                // script{
-                //     if (env.testPassed == true){
-                //         // Build the Docker image
-                //         image = docker.build("hdogar/frontend:latest")
-    
-                //         // Push Docker image to DockerHub
-                //         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-    			// 		    image.push()
-    			// 	    }
-                //     }
-                // }
-                
+                sh "docker login -u $username -p $password"
+                sh "docker-compose build && docker-compose push"
             }
         }
         stage('Deploy App'){
