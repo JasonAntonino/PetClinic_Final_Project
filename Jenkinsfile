@@ -31,15 +31,8 @@ pipeline {
                             sh "sudo npm install karma-junit-reporter --save-dev"
                             // sh "karma start -d"
                             sh "sudo npm i -D puppeteer karma-chrome-launcher"
-                            // sh 'ng test --watch false'
+                            sh 'ng test --watch false'
                             // sh "sudo npm update"
-                            sh "npm run test"
-
-                            post {
-                                always {
-                                    junit 'test-result.xml'
-                                }
-                            }
                         }catch(err){
                             testPassed = false
                         }
@@ -78,4 +71,9 @@ pipeline {
             }
         }
     }
+    post {
+      always {
+        junit '**/reports/junit/*.xml'
+      }
+    } 
 }
