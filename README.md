@@ -101,40 +101,34 @@ Above: Our CI pipeline
 
 # Setup Guide
 To begin with, we need to log in to docker.io as we will be pushing to  the website. To do this we use the command
-
-docker login
-
-and enter in your username and password
+ * docker login
+ * enter in your username and password
 
 To get the app running we first had to containerise it. To containerise the front end a dockerfile was provided which we used. To start with, you had to change directory into the frontend folder:
 
-cd frontend/
+* cd frontend/
 
 from there we could build the image with the command:
 
-docker build -t frontend:latest .
+* docker build -t frontend:latest .
 
 Once the image was built we then were able to tag the image and push it up to docker.io using:
 
-docker tag frontend hdogar96/frontend
+* docker tag frontend hdogar96/frontend
 
-docker push hdogar96/frontend
+* docker push hdogar96/frontend
 
 This then created an image on docker.io for us to then use in our compose yaml file later on. To containerise the backend, an image was already provided that was located at "springcommunity/spring-petclinic-rest" so we did not need to create our own (unless we wanted to use an external database such as an RDS). Finally, we needed to containerise the nginx reverse proxy we were going to use so a simple dockerfile was made to containerise nginx and we also created an nginx.conf file which would configure the nginx image to act as a reverse proxy.
+
+
 ![nginx](https://user-images.githubusercontent.com/43785332/139267953-d0cbc412-91b2-4ba6-becf-a4c69078e62a.PNG)
 
 
-
 We then built the image in the same way we did for the frontend:
-
-docker build -t nginx:latest .
-
+* docker build -t nginx:latest .
 And then pushed it to docker.io:
-
-docker tag frontend hdogar96/nginx
-
-docker push hdogar96/nginx
-
+* docker tag frontend hdogar96/nginx
+* docker push hdogar96/nginx
 The app was now ready to be deployed, but before we could we needed to make some small changed to the front end's source code. Two files needed to be adjusted to ensure the nginx container functioned as intended. The changes we made were to the environment.ts file and to the environment.prod.ts file. We changed the line:
 
 REST_API_URL: 'http://localhost:9966/petclinic/api/'
@@ -144,19 +138,15 @@ to
 REST_API_URL: '/petclinic/api/'
 
 as we were not running the application locally.
-
 After this was done the app was almost set up to run. We used docker compose so that we did not have to manually containerise each aspect of the app everytime we wanted to run it. We created a docker-compose.yaml file which would allow us to containerise the app in a single command.
+
 ![docker-compose](https://user-images.githubusercontent.com/43785332/139267982-6993752d-87a8-4ad4-b7a9-173fecedbb15.PNG)
 
 
-
 Now the application was ready to be deployed and could be done so with a single command:
-
-docker-compose up -d
-
+* docker-compose up -d
 To bring the app back, you can run the command:
-
-docker-compose down
+* docker-compose down
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Deployment
