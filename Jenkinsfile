@@ -30,13 +30,14 @@ pipeline {
                                     sh "sudo npm cache clean --force"
                                     sh "sudo npm install -g @angular/cli@8.0.6"
                                     sh "sudo npm install --save-dev @angular/cli@8.0.6" //Updates local version?
-                                    sh "npm install"
-                                    sh "npm i karma-cli"
+                                    sh "sudo npm install"
+                                    sh "sudo npm i karma-cli"
                                     sh "rm -rf package-lock.json"
                                     // sh "if npm version > 5.0 delete package-lock.json"
-                                    sh "npm install karma-junit-reporter --save-dev"
+                                    sh "sudo npm install karma-junit-reporter --save-dev"
                                     // sh "karma start -d"
                                     sh 'ng test --karma-config karma.conf.js'
+                                    sh "sudo npm update"
                                 }catch(err){
                                     testPassed = false
                                 }
