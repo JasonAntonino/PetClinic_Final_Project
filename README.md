@@ -80,10 +80,9 @@ Using Infrastucture as Code to provision the resources within AWS to run.
 We used Docker to containerise the applications.
 
 * [Kubernetes](https://kubernetes.io)
-
+Used Kubernetes to deploy containers to clusters
 
 * [AWS](https://aws.amazon.com)
-
 We used AWS for services such as the EKS clusters, EC2's
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
