@@ -47,4 +47,7 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install npm@latest -g
 sudo npm install -g karma
+sudo npm install -g angular
+sudo npm install -g karma
+sudo npm install --save-dev @angular-devkit/build-angular
 
