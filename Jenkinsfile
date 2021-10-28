@@ -12,9 +12,6 @@ pipeline {
         username = credentials('user')
         password = credentials('password')
     }
-    parameters{
-        booleanParam(name: "requirementsInstalled", defaultValue: false)
-    }
     stages{
         stage('Install Dependencies'){
             steps{
