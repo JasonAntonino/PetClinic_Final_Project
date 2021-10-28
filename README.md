@@ -14,6 +14,7 @@
      * [CI Pipeline]()
 * [Deployment]()
 * [Testing]()
+* [Cost] ()
 * [Areas for improvements]()
 * [Conclusion]()
 * [References]()
@@ -48,9 +49,23 @@ We were expected and required to hold daily stand ups.
 
 # Project Tracking
 
+![image](https://drive.google.com/uc?export=view&id=1oeDcklB2ejK4beDp1qBAKwIfnop-vd9k)
+
+
+
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Risk Assessment
+
+The risk assessment enabled us to foresee and address any problems. 
+Our risk assessment was continuosly updated, throughout the day the Scrum master would ask if any possible thoughts of risks had occurred whilst working.
+If they had, they were added to the risk assessment. For example, later in the project we realised that using Docker swarm with Jenkins could relate in sensitive information being pushed to Github. 
+Below, you can see our risk assessment early along in the project. 
+However, click [here](https://qalearning-my.sharepoint.com/:x:/g/personal/sstewart_qa_com/EQ4FxXqWGNZClIU_0_Z0280Bp6metj3K_4pN2sDVzWym7Q?e=GgMns5) to see the full risk assessment. 
+
+![image](https://drive.google.com/uc?export=view&id=1OZzRfmJ8Motf4nbfMDfQDNBg7tJnIN8H)
+
+Above: Our risk assessment early on in the process.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -60,7 +75,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 * [Terraform](http://terraform.io)
 * [Docker](https://www.docker.com)
-* [Docker Swarm](https://docs.docker.com/engine/swarm/)
+* [Kubernetes](https://kubernetes.io)
 * [AWS](https://aws.amazon.com)
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
@@ -71,7 +86,7 @@ We decided on using the following tools and technologies to complete the deploym
 
 
 ## CI Pipeline
-
+Our CI pipeline 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 # Setup Guide
@@ -88,6 +103,14 @@ We decided on using the following tools and technologies to complete the deploym
 
 # Cost
 
+Our cost varied a great deal, this was because we went from using Docker Swarm to using EKS.
+Originally we were projected to spend £7.28 a day with full deployment.
+However, once we switched to using Kubernetes our projected cost estimates were < ADDHERE > 
+
+
+<p align="right"><a href="#top">click to go back to  top</a></p>
+
+
 In terms of cost estimation/projection, we used the AWS calculator and our only expenditures were the 3 medium instances, and RDS and the nat gateway. 
 It appears the AWS Calculator does not take free tier accounts into consideration, hence the charge for the RDS  
 
@@ -97,8 +120,8 @@ It appears the AWS Calculator does not take free tier accounts into consideratio
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
     However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
-* Use Jira to better organise tasks.
-* Better knowledge and understanding of the tools (links back to the first point)
+* Using Jira instead of Trello to better organise tasks and create burndown charts.
+* A general better understanding of the tools.
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
