@@ -134,7 +134,7 @@ We then built the image in the same way we did for the frontend:
 And then pushed it to docker.io:
 * docker tag frontend hdogar96/nginx
 * docker push hdogar96/nginx
-The app was now ready to be deployed, but before we could we needed to make some small changed to the front end's source code. Two files needed to be adjusted to ensure the nginx container functioned as intended. The changes we made were to the environment.ts file and to the environment.prod.ts file. We changed the line:
+The app was now ready to be deployed, but before we could we needed to make some small changes to the front end's source code. Two files needed to be adjusted to ensure the nginx container functioned as intended. The changes we made were to the environment.ts file and to the environment.prod.ts file. We changed the line:
 
 REST_API_URL: 'http://localhost:9966/petclinic/api/'
 
