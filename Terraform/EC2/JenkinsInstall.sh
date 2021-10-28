@@ -63,6 +63,7 @@ sudo apt install -y unzip
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+sudo rm -rf awscliv2.zip
 
 #We then need to install kubectl to buiild our clusters with
 # download
@@ -81,3 +82,10 @@ sudo npm install npm@latest -g
 sudo npm install -g angular
 sudo npm install -g karma
 sudo npm install --save-dev @angular-devkit/build-angular
+
+sudo apt install chromium-browser -y
+sudo apt install wget unzip -y
+version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
+sudo wget https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip
+sudo unzip chromedriver_linux64.zip -d /usr/bin
+sudo rm chromedriver_linux64.zip
