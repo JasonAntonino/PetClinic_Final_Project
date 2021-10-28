@@ -4,25 +4,24 @@
 
 # Contents
  
-* [Project overview]()
-* [Project Tracking]()
-* [Risk Assessment]()
-* [Setup Guide]()
-* [Cost] ()
-* [Architecture]()
-     * [Databases]()
-     * [CI Pipeline]()
-* [Deployment]()
-* [Testing]()
-* [Cost] ()
-* [Areas for improvements]()
-* [Conclusion]()
-* [References]()
-* [Acknowledgements]()
-* [Licenses]()
+* [Project overview](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#petclinic_final_project)
+* [Project Tracking](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#project-tracking)
+* [Risk Assessment](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#risk-assessment)
+* [Setup Guide](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#setup-guide)
+* [Architecture](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#architecture)
+     * [Databases](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#databases)
+     * [CI Pipeline](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#ci-pipeline)
+* [Deployment](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#deployment)
+* [Testing](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#testing)
+* [Cost] (https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#cost)
+* [Areas for improvements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#areas-of-improvement)
+* [Conclusion](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#conclusion)
+* [References](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#references)
+* [Acknowledgements](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#acknowledgements)
+* [Licenses](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#licenses)
 
 
-# Project Overview
+# Project Overview 
 For our project we were given a working CRUD application that had a separate Frontend and backend. 
 It is our job to make it have a separate database to essentially transform it into a 3 tiered architecture.
 
@@ -34,7 +33,7 @@ The frontend and backend application are both in languages we are not yet accust
 * [Kubernetes](https://kubernetes.io)
 * [AWS](https://aws.amazon.com)
 
-The reasoning for these tools can be found in [[Architecture]
+The reasoning for these tools can be found in [Architecture](https://github.com/JasonAntonino/PetClinic_Final_Project/tree/dev#architecture)
 We were also expected and required to hold daily stand ups with a Scrum master in place and inline with Agile methodologies.
 
 
@@ -73,13 +72,19 @@ Above: Our risk assessment early on in the process.
 
 As aformentioned, we decided on using the following tools and technologies to complete the deployment. 
 
-* [Terraform]
-Using Infrastucture as Code 
+* [Terraform](https://www.terraform.io)
+
+Using Infrastucture as Code to provision the resources within AWS to run.
 
 * [Docker](https://www.docker.com)
+We used Docker to containerise the applications.
+
 * [Kubernetes](https://kubernetes.io)
+
+
 * [AWS](https://aws.amazon.com)
 
+We used AWS for services such as the EKS clusters, EC2's
 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
@@ -122,7 +127,7 @@ However, once we switched to using Kubernetes our projected cost estimates were 
  
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
-## Areas of improvement
+# Areas of improvement
 
 * Using Kubernetes would have allowed for further functionality than Docker Swarm. 
     However, because it requires separate installations of various cli tools and having to have high level all of them, given more time and improved understanding this may have been a better tool to implement.
@@ -132,7 +137,7 @@ However, once we switched to using Kubernetes our projected cost estimates were 
 <p align="right"><a href="#top">click to go back to  top</a></p>
 
 
-## Conclusion
+# Conclusion
 This project allowed our team to evaluate the pros and the cons of the tools and technologies we had considered, in a very hands on way. 
 For instance, we are now very aware of not only the capabilities but limitations and difficulties Docker Swarm can come with. On the otherhand, our understanding and useage of Terraform has grown exponentially. 
 As a group we organised tasks effectively with good and frequent motivating communication. 
