@@ -68,9 +68,9 @@ pipeline {
         // }
         stage('Deploy App'){
             steps{
-                sh "rm -rf PetClinic_Final_Project"
-                sh "ls -al"
-                sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
+                // sh "rm -rf PetClinic_Final_Project"
+                // sh "ls -al"
+                // sh "git clone https://github.com/JasonAntonino/PetClinic_Final_Project.git"
                 dir('PetClinic_Final_Project') {
                     sh "git checkout terraform-k8s"
                     dir('kubernetes') {
