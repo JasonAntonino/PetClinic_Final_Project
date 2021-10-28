@@ -22,7 +22,7 @@ pipeline {
                 dir('frontend') {
                     sh "ls -al"
                     script{
-                        if(env.requirementsInstalled == false){
+                        // if(env.requirementsInstalled == false){
                             try{
                                 sh "sudo npm uninstall -g angular-cli @angular/cli"
                                 sh "sudo npm cache clean --force"
@@ -31,7 +31,6 @@ pipeline {
                                 sh "sudo npm install"
                                 sh "sudo npm i karma-cli"
                                 sh "rm -rf package-lock.json"
-                                // sh "if npm version > 5.0 delete package-lock.json"
                                 sh "sudo npm install karma-junit-reporter --save-dev"
                                 // sh "karma start -d"
                                 sh "sudo npm i -D puppeteer karma-chrome-launcher"
@@ -40,9 +39,8 @@ pipeline {
                             }catch(err){
                                 testPassed = false
                             }
-                            requirementsInstalled == true
-                        }
-                         
+                            // requirementsInstalled == true
+                        // }
                     }
                 }
                 script{
@@ -50,14 +48,13 @@ pipeline {
                 }
             }
         }
-        stage('Build and Push Image'){
-            steps{
-                sh "ls -al"
-                sh "echo $password | sudo docker login -u $username --password-stdin"
-                // sh "sudo docker login -u $username --password-stdin $password"
-                sh "sudo docker-compose build && sudo docker-compose push"
-            }
-        }
+        // stage('Build and Push Image'){
+        //     steps{
+        //         sh "ls -al"
+        //         sh "echo $password | sudo docker login -u $username --password-stdin"
+        //         sh "sudo docker-compose build && sudo docker-compose push"
+        //     }
+        // }
         stage('Deploy App'){
             steps{
                 sh "ls -al"

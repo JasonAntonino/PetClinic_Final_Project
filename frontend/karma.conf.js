@@ -22,7 +22,7 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
-    browsers: ['ChromeHeadless'],
+    
     
 
     //   reporters: ['dots', 'junit'],
@@ -40,6 +40,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    browsers: ['ChromiumHeadless'],
     // browsers: ['Chrome'],
     singleRun: false
   });
