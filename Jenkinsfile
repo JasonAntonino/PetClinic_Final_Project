@@ -20,7 +20,7 @@ pipeline {
                 dir('frontend') {
                     sh "ls -al"
                     script{
-                        if(env.requirementsInstalled == false){
+                        // if(env.requirementsInstalled == false){
                             try{
                                 sh "sudo npm uninstall -g angular-cli @angular/cli"
                                 sh "sudo npm cache clean --force"
@@ -38,8 +38,8 @@ pipeline {
                             }catch(err){
                                 testPassed = false
                             }
-                            requirementsInstalled == true
-                        }
+                            // requirementsInstalled == true
+                        // }
                          
                     }
                 }
