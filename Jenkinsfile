@@ -15,7 +15,7 @@ pipeline {
         stage('Testing'){
             steps{
                 sh "ls -al"
-                sh "git checkout terraform-k8s"
+                // sh "git checkout terraform-k8s"
                 dir('frontend') {
                     sh "ls -al"
                     // script{
