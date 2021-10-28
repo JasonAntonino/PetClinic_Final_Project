@@ -29,11 +29,11 @@ pipeline {
                                     sh "sudo npm uninstall -g angular-cli @angular/cli"
                                     sh "sudo npm cache clean --force"
                                     sh "sudo npm install -g @angular/cli@latest"
-                                    sh "sudo npm install --save-dev @angular/cli@latest"
+                                    sh "sudo npm install --save-dev @angular/cli@latest" //Updates local version?
+                                    sh "npm install"
                                     sh "npm i karma-cli"
                                     sh "rm -rf package-lock.json"
                                     // sh "if npm version > 5.0 delete package-lock.json"
-                                    sh "npm install"
                                     sh "npm install karma-junit-reporter --save-dev"
                                     // sh "karma start -d"
                                     sh 'ng test --karma-config karma.conf.js'
