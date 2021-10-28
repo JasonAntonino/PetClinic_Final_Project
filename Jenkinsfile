@@ -37,7 +37,7 @@ pipeline {
                                     sh "sudo npm install karma-junit-reporter --save-dev"
                                     // sh "karma start -d"
                                     sh "sudo npm i -D puppeteer karma-chrome-launcher"
-                                    sh 'ng test'
+                                    sh 'ng test --watch false'
                                     sh "sudo npm update"
                                 }catch(err){
                                     testPassed = false
