@@ -36,6 +36,7 @@ pipeline {
                                     // sh "if npm version > 5.0 delete package-lock.json"
                                     sh "sudo npm install karma-junit-reporter --save-dev"
                                     // sh "karma start -d"
+                                    sh "sudo npm i -D puppeteer karma-chrome-launcher"
                                     sh 'ng test'
                                     sh "sudo npm update"
                                 }catch(err){
