@@ -21,13 +21,21 @@ module.exports = function (config) {
     },
     
 
-    reporters: ['dots', 'junit'],
-      plugins : [
-        'karma-junit-reporter'
-      ],
-      junitReporter: {
-        outputFile: 'test-results.xml'
-      },
-      singleRun: true
+    // reporters: ['dots', 'junit'],
+    //   plugins : [
+    //     require('karma-junit-reporter')
+    //   ],
+    //   junitReporter: {
+    //     outputFile: 'test-results.xml'
+    //   },
+    //   singleRun: true
+
+    reporters: ['progress', 'kjhtml'],
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false
   });
 };
