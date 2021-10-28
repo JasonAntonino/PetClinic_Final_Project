@@ -36,7 +36,7 @@ pipeline {
                 dir('frontend') {
                     script{
                             try{
-                                sh "ng build"
+                                // sh "ng build"
                                 sh 'ng test --karma-config karma.conf.js --watch=false'
                             }catch(err){
                                 testPassed = false
