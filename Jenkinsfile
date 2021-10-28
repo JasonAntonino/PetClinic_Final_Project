@@ -27,6 +27,7 @@ pipeline {
                     // sh "sudo npm install"
                     sh "sudo npm install karma-junit-reporter --save-dev"
                     sh "sudo npm i -D puppeteer karma-chrome-launcher"
+                    sh "sudo npm install"
                     
                 }
                 
