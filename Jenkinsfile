@@ -29,7 +29,10 @@ pipeline {
                         sh "sudo npm install karma-junit-reporter --save-dev"
                         sh "sudo npm i -D puppeteer karma-chrome-launcher"
                     }
-                    requirementsInstalled = true
+                    else{
+                        requirementsInstalled = true
+                    }
+                    
                 }
                 
             }
