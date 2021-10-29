@@ -26,7 +26,7 @@ pipeline {
                     sh "rm -rf package-lock.json"
                     sh "sudo npm install karma-junit-reporter --save-dev"
                     sh "sudo npm i -D puppeteer karma-chrome-launcher"
-                    sh "sudo npm install --save-dev karma-jasmine"
+                    sh "sudo npm install --save-dev karma-jasmine karma-jasmine-html-reporter karma-coverage-istanbul-reporter karma-chrome-launcher"
                     // sh "sudo npx browserslist --update-db"
                     
                 }
