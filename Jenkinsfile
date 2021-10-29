@@ -18,14 +18,16 @@ pipeline {
                 script{
                     sh "sudo npm uninstall -g angular-cli @angular/cli"
                     sh "sudo npm cache clean --force"
-                    sh "sudo npm install -g @angular/cli@8.3.25"
-                    sh "sudo npm install --save-dev @angular-devkit/build-angular"
-                    sh "sudo npm install --save-dev @angular/cli@8.3.25"
+                    sh "sudo npm install -g @angular/cli@8.0.3"
+                    sh "sudo npm install --save-dev @angular-devkit/build-angular@~0.803.24 --force"
+                    sh "sudo npm install --save-dev @angular/cli@8.0.3"
                     sh "sudo npm install"
                     sh "sudo npm i karma-cli"
                     sh "rm -rf package-lock.json"
                     sh "sudo npm install karma-junit-reporter --save-dev"
                     sh "sudo npm i -D puppeteer karma-chrome-launcher"
+                    sh "sudo npm install --save-dev karma-jasmine karma-jasmine-html-reporter karma-coverage-istanbul-reporter karma-chrome-launcher"
+                    // sh "sudo npx browserslist --update-db"
                     
                 }
                 
@@ -35,12 +37,13 @@ pipeline {
             steps{
                 dir('frontend') {
                     script{
-                            try{
-                                // sh "ng build"
-                                sh 'ng test --karma-config karma.conf.js --watch=false'
-                            }catch(err){
-                                testPassed = false
-                            }
+                        try{
+                            // sh "ng build"
+                            sh "sudo npm install"
+                            sh 'ng test --karma-config karma.conf.js --watch=false'
+                        }catch(err){
+                            testPassed = false
+                        }
                     }
                 }
             }
@@ -63,4 +66,5 @@ pipeline {
         }
     }
 }
+
 
