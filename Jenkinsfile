@@ -39,7 +39,7 @@ pipeline {
                     script{
                             try{
                                 // sh "ng build"
-                                sh 'cd frontend && ng test --karma-config karma.conf.js --watch=false'
+                                sh 'cd frontend && ng test --watch=false'
                             }catch(err){
                                 testPassed = false
                             }
