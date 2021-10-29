@@ -26,6 +26,7 @@ pipeline {
                     sh "rm -rf package-lock.json"
                     sh "sudo npm install karma-junit-reporter --save-dev"
                     sh "sudo npm i -D puppeteer karma-chrome-launcher"
+                    sh "npm install -g jasmine-core"
                     
                 }
                 
