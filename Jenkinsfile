@@ -35,16 +35,17 @@ pipeline {
         }
         stage('Testing'){
             steps{
-                // dir('frontend') {
+                dir('frontend') {
                     script{
-                            try{
-                                // sh "ng build"
-                                sh 'cd frontend && ng test --watch=false'
-                            }catch(err){
-                                testPassed = false
-                            }
+                        try{
+                            // sh "ng build"
+                            sh "sudo npm install"
+                            sh 'ng test --karma-config karma.conf.js --watch=false'
+                        }catch(err){
+                            testPassed = false
+                        }
                     }
-                // }
+                }
             }
         }
         stage('Build and Push Image'){
